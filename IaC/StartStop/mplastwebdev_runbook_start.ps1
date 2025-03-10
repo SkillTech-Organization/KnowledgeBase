@@ -3,7 +3,7 @@
 $subscriptionId = "702fab27-7b08-4bcd-a29e-4c15e902dca2"
 $azureAplicationId ="4c016de3-1c7e-4112-afd4-8431b5a6acf7"
 $azureTenantId = "8875ae16-2b24-4357-95a4-62e9df84fe06"
-$clientSecret = "ms08Q~7COdWlM9Vc~_Cct3cgcU645E-VOvh-XavR"
+$clientSecret = "."
 $resourceGroupName = "mplastwebdev"
 $azurePassword = ConvertTo-SecureString $clientSecret -AsPlainText -Force
 
