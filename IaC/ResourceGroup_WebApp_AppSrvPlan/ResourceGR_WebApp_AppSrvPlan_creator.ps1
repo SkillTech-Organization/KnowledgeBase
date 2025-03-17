@@ -88,4 +88,4 @@ Write-Host "----------------"
 Write-Host "ResourceGroupName: $ResourceGroupName"
 Write-Host "App Service Plan: $AppServicePlanName (Tier: $Tier, Worker Size: $WorkerSize)"
 Write-Host "Web App: $WebAppName"
-Write-Host "Web App URL: https://$WebAppName.azurewebsites.net"
+Write-Host "Web App URL: https://$WebAppName.azurewebsites.net" -ForegroundColor Blue
