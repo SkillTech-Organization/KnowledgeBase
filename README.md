@@ -55,8 +55,8 @@ _{prefix}{client}{projectcode}{system or component}{environment short code}{reso
 **If possible use separators (dot (.), undescrore (_), hyphen (-)) on the border ot the named items.**
 
 **Examples:**
-* _sktc-prtx-pvcld-prvpcldapi-tst-rsgrp_ - Resource group to the PVRPCloud project at PRATIX Client
-* _sktc-xgz-axrp-axrpsqld-tst-sqld_ - (MS) SQL Database of the AXERP project at AXEGAZ client
+* _sktc-prtx-pvcld-prvpcldapi-tst-rsgrp-01_ - Resource group to the PVRPCloud project at PRATIX Client
+* _sktc-xgz-axrp-axrpsqld-tst-sqld-02_ - (MS) SQL Database of the AXERP project at AXEGAZ client
 
 ### How to organize components
 * all item organize to one resourcegroup per environment
