@@ -57,6 +57,7 @@ _{prefix}{client}{projectcode}{system or component}{environment short code}{reso
 **Examples:**
 * _sktc-prtx-pvcld-prvpcldapi-tst-rsgrp-01_ - Resource group to the PVRPCloud project at PRATIX Client
 * _sktc-xgz-axrp-axrpsqld-tst-sqld-02_ - (MS) SQL Database of the AXERP project at AXEGAZ client
+* _sktcxgzrpctrvmprdvm01_ Virtual machine in AWS Cloud environment for Axegaz Reportcenter project
 
 ### How to organize components
 * all item organize to one resourcegroup per environment
