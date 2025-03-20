@@ -50,9 +50,9 @@
 		> * LOAD BALANCER: loba
 		> * PRIVATE ENDPOINT: prep
 		
-{prefix}{client}{projectcode}{system/component}{environment short code}{resource type short code}{counter}
+_{prefix}{client}{projectcode}{system or component}{environment short code}{resource type short code}{counter}_
 
-** If possible use separators (dot (.), undescrore (_), hyphen (-)) on the border ot the named items.
+**If possible use separators (dot (.), undescrore (_), hyphen (-)) on the border ot the named items.**
 
 **Examples:**
 * _sktc-prtx-pvcld-prvpcldapi-tst-rsgrp_ - Resource group to the PVRPCloud project at PRATIX Client
