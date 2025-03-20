@@ -3,9 +3,15 @@
 ## Azure Landing Governance
 
 ### Naming convention
-- The names of the resources following the next rules
-{CLIENT}_{PROJECTCODE}_{SYSTEM/COMPONENT}_{ENVIRONMENT}_{RESOURCE_TYPENAME}
+* The names of the resources following the next rules
+	* every resource name is in lowercase
+	* all resource use only alphanumerical characters
+	* we use _sktc_ prefix
+	* we use short codes for
+		* ENVIRONMENT
+		* RESOURCE TYPE
+{sktc}{client}{projectcode}{system/component}{environment short code}{resource type short code}{counter}
 
 **Examples:**
-* _PRATIX_PVRPCLOUD_PVRPWEBAPI_TEST_RESOURCEGROUP_ - Resource group to the PVRPCloud project at PRATIX Client
+* _sktchpratixpvrpcloudpvrpwebapitstrgrp_ - Resource group to the PVRPCloud project at PRATIX Client
 * _AXEGAZ_AXERP_AXERPDATABASE_TEST_SQLDATABASE_ - (MS) SQL Database of the AXERP project at AXEGAZ client
