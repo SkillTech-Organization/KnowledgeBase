@@ -67,7 +67,10 @@ _{prefix}{client}{projectcode}{system or component}{environment short code}{reso
 * all components mandatory create via IaC (infrastructure as code) manner from script
 * use the centralized IaC scripts and parametrized them 
 * IaC script pushed to separated GitHub repository per project 
+* e.g.: [Pratix IaC](https://github.com/SkillTech-Organization/Pratix_IaC)
 
 ### Use CI/CD
 * all components deliver from CI/CD (GitHub Action scripts) to Azure zones
+* these Github actions stored under **.github/workflows** folder in Github repo
 * expect if we cannot solved the CI/CD chain currently
+* e.g. [AXERP Function app CI/CD](https://github.com/SkillTech-Organization/AXERP_API/actions)
