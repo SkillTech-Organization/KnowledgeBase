@@ -74,3 +74,20 @@ _{prefix}{client}{projectcode}{system or component}{environment short code}{reso
 * these Github actions stored under **.github/workflows** folder in Github repo
 * expect if we cannot solved the CI/CD chain currently
 * e.g. [AXERP Function app CI/CD](https://github.com/SkillTech-Organization/AXERP_API/actions)
+
+### Before we start a project in Azure/AWS Cloud, pls fil lthe following form
+#### You have to define these infos per environments!
+#### Main 
+| Management items  | Description                                                                           |
+| ----------------- | ------------------------------------------------------------------------------------- |
+| Account(s)        | set up the Account wihc one contains and the project rely on this                     |
+| Management group  | set up the management group                                                           |
+| Subscription      | set up the subscription of the project parts. If need use separated subscr. tper envs |
+| Resource group    | set up the resource group per environments                                            |
+| Tenant ID         | set up the Tenant of the subscription                                                 |
+
+Then you define the resource items for  the project per environments.
+
+| Resource type     | Resource name | Description                                                           |
+| ----------------- | ------------------------------------------------------------------------------------- |
+| resource type     | resource name | goals of the resource item and other params                           |
