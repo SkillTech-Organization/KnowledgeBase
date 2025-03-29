@@ -91,3 +91,7 @@ Then you define the resource items for  the project per environments.
 | Resource type     | Resource name | Description                                                           |
 | ----------------- | ------------- | --------------------------------------------------------------------- |
 | resource type     | resource name | goals of the resource item and other params                           |
+
+### Monitoring capabilities
+#### We have to define teh logging parameters
+... *TBD* ...
