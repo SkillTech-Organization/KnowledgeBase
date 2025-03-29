@@ -89,5 +89,5 @@ _{prefix}{client}{projectcode}{system or component}{environment short code}{reso
 Then you define the resource items for  the project per environments.
 
 | Resource type     | Resource name | Description                                                           |
-| ----------------- | ------------------------------------------------------------------------------------- |
+| ----------------- | ------------- | --------------------------------------------------------------------- |
 | resource type     | resource name | goals of the resource item and other params                           |
