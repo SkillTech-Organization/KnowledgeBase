@@ -139,10 +139,13 @@ Then you define the resource items for  the project per environments.
 - NSG
 
 ### VMs
-- 	"vnetAddressPrefix": "10.0.0.0/16",
-	"vmPublisherName": "MicrosoftWindowsServer",
-	"vmOffer": "WindowsServer",
-	"vmSKU": "2019-Datacenter",
-	"vmOSVersion": "latest",
-	"vmLoginUserID": "AdminUser123",
-	"vmLoginPassword": "Str0ngP@ssw0rd!"
+- 	
+| "vnetAddressPrefix": "10.0.0.0/16",
+| "vmPublisherName": "MicrosoftWindowsServer",
+| "vmOffer": "WindowsServer",
+| "vmSKU": "2019-Datacenter",
+| "vmOSVersion": "latest",
+| "vmLoginUserID": "",
+| "vmLoginPassword": ""
+	
+### sync/async components ?
