@@ -112,6 +112,7 @@ Then you define the resource items for  the project per environments.
 - TLS
 - Secure transfer
 - AD authorization
+- location
 
 ### FinOps - how much?
 
@@ -121,3 +122,27 @@ Then you define the resource items for  the project per environments.
 
 ### custom/Azure based domain names to URL
 
+### Data storage
+#### SQL
+- pricing tier
+- SLA
+- DB edition
+- DB Collation
+- DB size
+- location
+
+#### NoSQL
+
+### VNETs
+- publicIP
+- publis static IP
+- NSG
+
+### VMs
+- 	"vnetAddressPrefix": "10.0.0.0/16",
+	"vmPublisherName": "MicrosoftWindowsServer",
+	"vmOffer": "WindowsServer",
+	"vmSKU": "2019-Datacenter",
+	"vmOSVersion": "latest",
+	"vmLoginUserID": "AdminUser123",
+	"vmLoginPassword": "Str0ngP@ssw0rd!"
