@@ -93,5 +93,26 @@ Then you define the resource items for  the project per environments.
 | resource type     | resource name | goals of the resource item and other params                           |
 
 ### Monitoring capabilities
-#### We have to define teh logging parameters
+#### We have to define the logging parameters
 ... *TBD* ...
+
+### Storage account
+. LRS, ZRS, GRS: which one redundancy need it?
+
+. azure blob storage
+- access tier: hot, cool, cold, archive ?
+
+. azure files
+
+. azure queue storage
+
+. azure table storage
+
+- access levels? 
+- TLS
+- Secure transfer
+- AD authorization
+
+### FinOps - how much?
+
+### EntryID, authn/authz
