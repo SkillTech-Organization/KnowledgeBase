@@ -149,3 +149,5 @@ Then you define the resource items for  the project per environments.
 > "vmLoginPassword": ""
 	
 ### sync/async components ?
+
+### exit strategy is exists ?
