@@ -140,12 +140,12 @@ Then you define the resource items for  the project per environments.
 
 ### VMs
 - 	
-| "vnetAddressPrefix": "10.0.0.0/16",
-| "vmPublisherName": "MicrosoftWindowsServer",
-| "vmOffer": "WindowsServer",
-| "vmSKU": "2019-Datacenter",
-| "vmOSVersion": "latest",
-| "vmLoginUserID": "",
-| "vmLoginPassword": ""
+> "vnetAddressPrefix": "10.0.0.0/16",
+> "vmPublisherName": "MicrosoftWindowsServer",
+> "vmOffer": "WindowsServer",
+> "vmSKU": "2019-Datacenter",
+> "vmOSVersion": "latest",
+> "vmLoginUserID": "",
+> "vmLoginPassword": ""
 	
 ### sync/async components ?
