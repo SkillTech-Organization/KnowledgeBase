@@ -116,3 +116,8 @@ Then you define the resource items for  the project per environments.
 ### FinOps - how much?
 
 ### EntryID, authn/authz
+
+### .certs
+
+### custom/Azure based domain names to URL
+
