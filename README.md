@@ -143,7 +143,7 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 ## 8. FinOps
 
 * Use Azure Cost Management + Billing
-* !IMPORTANT: Tag all resources for ownership, environment, project
+* **IMPORTANT!** Tag all resources for ownership, environment, project
 * Define budgets and configure alerts per subscription
 
 ---
@@ -250,6 +250,7 @@ In .NET Framework applications, settings are typically stored in:
 To make these adjustable in Azure Portal:
 Azure will automatically map environment variables to your configuration
 Use App Settings in Azure portal with keys that match your config keys
+
 *For example, if you have <add key="ApiEndpoint" value="https://example.com" /> in your config file, set an App Setting named "ApiEndpoint" in Azure*
 
 #### .NET Core Configuration
@@ -269,4 +270,5 @@ To make these adjustable in Azure Portal:
 
 * Use App Settings in Azure Portal
 * For hierarchical settings, use colon notation
+
 *For example, if you have "Logging": { "LogLevel": { "Default": "Information" } } in appsettings.json, you can override it with an App Setting named "Logging:LogLevel:Default"*
