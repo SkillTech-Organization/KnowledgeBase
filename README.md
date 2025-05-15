@@ -2,152 +2,271 @@
 
 ## Azure Landing Governance
 
-### Naming convention
-* The names of the resources following the next rules
-	* every resource name is in lowercase
-	* all resource use only alphanumerical characters
-	* with the naming convetion we support the unique resource names
-	* 
-	* we use **_sktc_** prefix fro all resources
-	* we use short codes for
-		* CLIENTS
-		> * PRATIX: prtx
-		> * AXEGAZ: xgz
-		> * RELAX: rlx
-		
-		* PROJECT CODES
-		> * BBX: bbx
-		> * AXERP: axrp
-		> * PRVPCLOUD: pvcld
-		> * REPORTCENTER: rpctr
-		
-		* SYSTEM/COMPONENTS's NAME
-		> * create a short name of the curent component
-		> * e.g.: PRVPCloudWebAPI: prvpcldapi
-		> * e.g.: FTLSupportWebAPI: flspapi
-		
-		* ENVIRONMENTS
-		> * TEST: tst
-		> * PROD: prd
-		
-		* RESOURCE TYPES
-		> * RESOURCE GROUP: rsgrp
-		> * APP SERVICE: apse
-		> * APP SERVICE PLAN: apsp
-		> * STORAGE: strg
-		> * STORAGE ACCOUNT: stac
-		> * BLOB STORAGE: blstrg
-		> * SQL MANAGED INSTANCE: sqlm
-		> * AZURE SQL SERVER: sqls
-		> * AZURE SQL DATABASE: sqld
-		> * VIRTUAL MACHINE: vm
-		> * AUTOMATION ACCOUNT: auac
-		> * RUNBOOK: rubo
-		> * PUIBLIC IP ADDRESS: pipa
-		> * FUNCTION APP: fapp
-		> * LOGIC APP: lapp
-		> * KEY VAULT: kvau
-		> * LOAD BALANCER: loba
-		> * PRIVATE ENDPOINT: prep
-		
-_{prefix}{client}{projectcode}{system or component}{environment short code}{resource type short code}{counter}_
+---
 
-**If possible use separators (dot (.), undescrore (_), hyphen (-)) on the border ot the named items.**
+## 1. Naming Convention
 
-**Examples:**
-* _sktc-prtx-pvcld-prvpcldapi-tst-rsgrp-01_ - Resource group to the PVRPCloud project at PRATIX Client
-* _sktc-xgz-axrp-axrpsqld-tst-sqld-02_ - (MS) SQL Database of the AXERP project at AXEGAZ client
-* _sktcxgzrpctrvmprdvm01_ - Virtual machine in AWS Cloud environment for Axegaz Reportcenter project
+All resource names must follow these rules:
 
-### How to organize components
-* all item organize to one resourcegroup per environment
-* eg.: all components in AXERP project at TEST environments are under a test resource group
+* All lowercase letters
+* Alphanumeric characters only
+* Unique resource names per global Azure requirements
+* Single separator standard: **hyphen (-)**
 
-### Use IaC
-* all components mandatory create via IaC (infrastructure as code) manner from script
-* use the centralized IaC scripts and parametrized them 
-* IaC script pushed to separated GitHub repository per project 
-* e.g.: [Pratix IaC](https://github.com/SkillTech-Organization/Pratix_IaC)
+### Prefix
 
-### Use CI/CD
-* all components deliver from CI/CD (GitHub Action scripts) to Azure zones
-* these Github actions stored under **.github/workflows** folder in Github repo
-* expect if we cannot solved the CI/CD chain currently
-* e.g. [AXERP Function app CI/CD](https://github.com/SkillTech-Organization/AXERP_API/actions)
+All resource names begin with the **sktc** prefix.
 
-### Before we start a project in Azure/AWS Cloud, pls fil lthe following form
-#### You have to define these infos per environments!
-#### Main 
-| Management items  | Description                                                                           |
-| ----------------- | ------------------------------------------------------------------------------------- |
-| Account(s)        | set up the Account wihc one contains and the project rely on this                     |
-| Management group  | set up the management group                                                           |
-| Subscription      | set up the subscription of the project parts. If need use separated subscr. tper envs |
-| Resource group    | set up the resource group per environments                                            |
-| Tenant ID         | set up the Tenant of the subscription                                                 |
+### Short Codes
 
-Then you define the resource items for  the project per environments.
+#### Clients
 
-| Resource type     | Resource name | Description                                                           |
-| ----------------- | ------------- | --------------------------------------------------------------------- |
-| resource type     | resource name | goals of the resource item and other params                           |
+* PRATIX: prtx
+* AXEGAZ: xgz
+* RELAX: rlx
 
-### Monitoring capabilities
-#### We have to define the logging parameters
-... *TBD* ...
+#### Project Codes
 
-### Storage account
-. LRS, ZRS, GRS: which one redundancy need it?
+* BBX: bbx
+* AXERP: axrp
+* PRVPCLOUD: pvcld
+* REPORTCENTER: rpctr
 
-. azure blob storage
-- access tier: hot, cool, cold, archive ?
+#### System/Component Names
 
-. azure files
+* Create a short name based on the component
+* Example: PRVPCloudWebAPI: prvpcldapi; FTLSupportWebAPI: flspapi
 
-. azure queue storage
+#### Environments
 
-. azure table storage
+* TEST: tst
+* PROD: prd
 
-- access levels? 
-- TLS
-- Secure transfer
-- AD authorization
-- location
+#### Resource Types
 
-### FinOps - how much?
+* Resource Group: rsgrp
+* App Service: apse
+* App Service Plan: apsp
+* Storage: strg
+* Storage Account: stac
+* Blob Storage: blstrg
+* SQL Managed Instance: sqlm
+* Azure SQL Server: sqls
+* Azure SQL Database: sqld
+* Virtual Machine: vm
+* Automation Account: auac
+* Runbook: rubo
+* Public IP Address: pipa
+* Function App: fapp
+* Logic App: lapp
+* Key Vault: kvau
+* Load Balancer: loba
+* Private Endpoint: prep
 
-### EntryID, authn/authz
+### Naming Pattern
 
-### .certs
+`sktc-{client}-{projectcode}-{system/component}-{environment}-{resourcetype}-{counter}`
 
-### custom/Azure based domain names to URL
+### Examples
 
-### Data storage
-#### SQL
-- pricing tier
-- SLA
-- DB edition
-- DB Collation
-- DB size
-- location
+* sktc-prtx-pvcld-prvpcldapi-tst-rsgrp-01 → Resource group for PRATIX PRVPCloud TEST environment
+* sktc-xgz-axrp-axrpsqld-tst-sqld-02 → SQL Database for AXEGAZ AXERP TEST
+* sktc-xgz-rpctr-vm-prd-vm-01 → Virtual Machine for AXEGAZ Reportcenter PROD
 
-#### NoSQL
+---
+
+## 2. Resource Group Organization
+
+* Each environment must have a dedicated resource group
+* Example: All AXERP TEST resources → axrp-tst-rsgrp
+
+---
+
+## 3. Infrastructure as Code (IaC)
+
+* All resources must be deployed via IaC scripts
+* Scripts must be centralized and parameterized per project
+* Each project has its own GitHub repository
+
+Example: [Pratix IaC Repository](https://github.com/SkillTech-Organization/Pratix_IaC)
+**Instead this we have to use [Azure Resource Management (ARM)](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview)**
+
+---
+
+## 4. CI/CD Deployment
+
+* All deployments must use GitHub Actions
+* Actions stored under `.github/workflows` in repo
+* Exception allowed only if CI/CD not possible
+
+Example: [AXERP Function App Actions](https://github.com/SkillTech-Organization/AXERP_API/actions)
+
+---
+
+## 5. Pre-Project Requirements Form
+
+### Define Per Environment
+
+| Item             | Description                                             |
+| ---------------- | ------------------------------------------------------- |
+| Account          | Set account for project dependencies                    |
+| Management Group | Assign the correct group                                |
+| Subscription     | Assign subscription, separate per environment if needed |
+| Resource Group   | Define per environment                                  |
+| Tenant ID        | Set subscription tenant                                 |
+
+### Resource Items
+
+| Resource Type | Resource Name | Description          |
+| ------------- | ------------- | -------------------- |
+| Type          | Name          | Purpose & parameters |
+
+---
+
+## 6. Monitoring
+
+TBD → Define mandatory logging, alerting, and diagnostic settings.
+[Logging](https://github.com/SkillTech-Organization/KnowledgeBase/tree/develop/Docs)
+---
+
+## 7. Storage Account Guidelines
+
+* Redundancy: Default LRS; use ZRS/GRS only if justified
+* Blob Storage: hot tier by default, archive only by exception
+* Secure transfer: Always enabled
+* AD Authorization: Use when available
+* TLS Encryption: Mandatory
+* Data Location: Always within compliance region
+
+---
+
+## 8. FinOps
+
+* Use Azure Cost Management + Billing
+* !IMPORTANT: Tag all resources for ownership, environment, project
+* Define budgets and configure alerts per subscription
+
+---
+
+## 9. Security and Compliance
+
+* Apply Azure Policy for governance controls
+* Implement role-based access control (RBAC)
+* Ensure GDPR and local compliance
+* Enforce Azure Blueprints when applicable
+
+---
+
+## 10. Networking
 
 ### VNETs
-- publicIP
-- publis static IP
-- NSG
 
-### VMs
-- 	
-> "vnetAddressPrefix": "10.0.0.0/16",
-> "vmPublisherName": "MicrosoftWindowsServer",
-> "vmOffer": "WindowsServer",
-> "vmSKU": "2019-Datacenter",
-> "vmOSVersion": "latest",
-> "vmLoginUserID": "",
-> "vmLoginPassword": ""
-	
-### sync/async components ?
+* Use hub-spoke architecture
+* Define address ranges: e.g., vnetAddressPrefix: 10.0.0.0/16
+* Public IP: static only when justified
+* Implement NSGs to control traffic
 
-### exit strategy is exists ?
+### Connectivity
+
+* Define VPN and/or ExpressRoute configurations
+* Allow VNET peering when needed
+
+---
+
+## 11. Virtual Machines
+
+* Publisher: MicrosoftWindowsServer
+* Offer: WindowsServer
+* SKU: 2019-Datacenter
+* OS Version: latest
+* Define approved VM sizes per workload
+* Enforce Managed Identities
+* Implement patch management via Azure Automation
+
+---
+
+## 12. Data Storage Guidelines
+
+### SQL
+
+* Use recommended edition and pricing tier
+* Define SLA and RPO/RTO
+* Set DB Collation and size limits
+
+### NoSQL
+
+* Define Cosmos DB or other solution depending on workload
+* Apply data retention and partitioning strategy
+
+---
+
+## 13. Certificates and Domains
+
+* Certificates must be managed centrally
+* Define expiration monitoring and renewal process
+* Define process for Azure DNS and custom domain configuration
+
+---
+
+## 14. Identity and Access Management
+
+* Integrate with Azure Active Directory when justified
+* Define central authentication policy
+* Implement least-privilege access
+
+---
+
+## 15. Automation
+
+* Use Azure Automation and Logic Apps for operational tasks
+* Automate patching, monitoring, backup, and cleanup
+
+---
+
+## 16. Exit Strategy
+
+* Define decommissioning steps
+* Create offboarding checklist
+* Export backups and configurations
+* Ensure data retention policies are followed
+
+---
+
+## 17. Configuration
+
+* All project define own configuration settings in appropiate place
+* For that aim: configuration values adjustable on the Azure portal environment variables section.
+* Such way, sensitive data don't pushable to the Git repository
+
+#### NET Framework Configuration
+In .NET Framework applications, settings are typically stored in:
+
+**Web.config/App.config files:**
+
+* appSettings section for simple key-value pairs
+* connectionStrings section for database connections
+* Custom configuration sections for more complex settings
+
+To make these adjustable in Azure Portal:
+Azure will automatically map environment variables to your configuration
+Use App Settings in Azure portal with keys that match your config keys
+*For example, if you have <add key="ApiEndpoint" value="https://example.com" /> in your config file, set an App Setting named "ApiEndpoint" in Azure*
+
+#### .NET Core Configuration
+.NET Core uses a more flexible configuration system:
+
+**appsettings.json:**
+
+* JSON-based configuration
+* Environment-specific files (appsettings.Development.json, etc.)
+* Hierarchical settings structure
+
+*Program.cs/Startup.cs:*
+Configuration builder pattern
+Environment variables automatically loaded with AddEnvironmentVariables()
+
+To make these adjustable in Azure Portal:
+
+* Use App Settings in Azure Portal
+* For hierarchical settings, use colon notation
+*For example, if you have "Logging": { "LogLevel": { "Default": "Information" } } in appsettings.json, you can override it with an App Setting named "Logging:LogLevel:Default"*
