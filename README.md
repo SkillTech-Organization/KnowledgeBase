@@ -75,26 +75,43 @@ All resource names begin with the **sktc** prefix.
 
 ---
 
-## 2. Resource Group Organization
+## 2. Tagging
+* All resources must have their properties in the form of tags (TAGs).
+* We tag the next properties on a resource:
+  * name: "creator"  - value: "SkillTech", "sktc"
+  * name: "client" - value: "prtx", "PRATIX", ...
+  * name: "environment" - value: "tst", "prd", "TEST", "PROD"
+  * name: "project" - value: "bbx", "axerp", "BBX", "AXERP", ...
+  * name: "costsCenter" - value: {subscriptionId}
+  * name: "application" - value: "pvrpcloud", "PVRPCloudAPI", ...
+  * name: "region" - value: "westeurope", "norteurope", ...
+  * name: "deployedBy" - value: "Bicep", "ARM", "Manual", "PowerShell"
+  * name: "resource" - value: "appservice", "database", ...
+  
+---
+
+## 3. Resource Group Organization
 
 * Each environment must have a dedicated resource group
 * Example: All AXERP TEST resources → axrp-tst-rsgrp
 
 ---
 
-## 3. Infrastructure as Code (IaC)
+## 4. Infrastructure as Code (IaC)
 
 * All resources must be deployed via IaC scripts
 * Scripts must be centralized and parameterized per project
-* Each project has its own GitHub repository
+* Each project has its own IaC GitHub repository
+* Actions stored under `.github/IaC` in repo
 
 Example: [Pratix IaC Repository](https://github.com/SkillTech-Organization/Pratix_IaC)
 **Instead this we have to use [Azure Resource Management (ARM)](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview)**
 
 ---
 
-## 4. CI/CD Deployment
+## 5. CI/CD Deployment
 
+* All sorcodes stored in Github repository
 * All deployments must use GitHub Actions
 * Actions stored under `.github/workflows` in repo
 * Exception allowed only if CI/CD not possible
@@ -103,33 +120,33 @@ Example: [AXERP Function App Actions](https://github.com/SkillTech-Organization/
 
 ---
 
-## 5. Pre-Project Requirements Form
+## 6. Pre-Project Requirements Form
 
 ### Define Per Environment
 
-| Item             | Description                                             |
-| ---------------- | ------------------------------------------------------- |
-| Account          | Set account for project dependencies                    |
-| Management Group | Assign the correct group                                |
-| Subscription     | Assign subscription, separate per environment if needed |
-| Resource Group   | Define per environment                                  |
-| Tenant ID        | Set subscription tenant                                 |
+| Item              | Description                                             |
+| ----------------- | ------------------------------------------------------- |
+| Account           | Set account for project dependencies                    |
+| Management Group  | Assign the correct group                                |
+| Subscription      | Assign subscription, separate per environment if needed |
+| Resource Group    | Define per environment                                  |
+| Tenant ID         | Set subscription tenant                                 |
 
 ### Resource Items
 
-| Resource Type | Resource Name | Description          |
-| ------------- | ------------- | -------------------- |
-| Type          | Name          | Purpose & parameters |
+| Resource Type | Resource Name | Description           | Tags                     |
+| ------------- | ------------- | --------------------- | ------------------------ |
+| Type          | Name          | Purpose & parameters  | _2. Tagging_ description |
 
 ---
 
-## 6. Monitoring
+## 7. Monitoring
 
 TBD → Define mandatory logging, alerting, and diagnostic settings.
 [Logging](https://github.com/SkillTech-Organization/KnowledgeBase/tree/develop/Docs)
 ---
 
-## 7. Storage Account Guidelines
+## 8. Storage Account Guidelines
 
 * Redundancy: Default LRS; use ZRS/GRS only if justified
 * Blob Storage: hot tier by default, archive only by exception
@@ -140,15 +157,15 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 
 ---
 
-## 8. FinOps
+## 9. FinOps
 
 * Use Azure Cost Management + Billing
-* **IMPORTANT!** Tag all resources for ownership, environment, project
+* **IMPORTANT!** Tag all resources for ownership, environment, project - _2. Tagging_ description
 * Define budgets and configure alerts per subscription
 
 ---
 
-## 9. Security and Compliance
+## 10. Security and Compliance
 
 * Apply Azure Policy for governance controls
 * Implement role-based access control (RBAC)
@@ -157,7 +174,7 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 
 ---
 
-## 10. Networking
+## 11. Networking
 
 ### VNETs
 
@@ -173,7 +190,7 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 
 ---
 
-## 11. Virtual Machines
+## 12. Virtual Machines
 
 * Publisher: MicrosoftWindowsServer
 * Offer: WindowsServer
@@ -185,7 +202,7 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 
 ---
 
-## 12. Data Storage Guidelines
+## 13. Data Storage Guidelines
 
 ### SQL
 
@@ -200,7 +217,7 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 
 ---
 
-## 13. Certificates and Domains
+## 14. Certificates and Domains
 
 * Certificates must be managed centrally
 * Define expiration monitoring and renewal process
@@ -208,7 +225,7 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 
 ---
 
-## 14. Identity and Access Management
+## 15. Identity and Access Management
 
 * Integrate with Azure Active Directory when justified
 * Define central authentication policy
@@ -216,14 +233,14 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 
 ---
 
-## 15. Automation
+## 16. Automation
 
 * Use Azure Automation and Logic Apps for operational tasks
 * Automate patching, monitoring, backup, and cleanup
 
 ---
 
-## 16. Exit Strategy
+## 17. Exit Strategy
 
 * Define decommissioning steps
 * Create offboarding checklist
@@ -232,7 +249,7 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 
 ---
 
-## 17. Configuration
+## 18. Configuration
 
 * All project define own configuration settings in appropiate place
 * For that aim: configuration values adjustable on the Azure portal environment variables section.
