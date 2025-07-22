@@ -1,7 +1,7 @@
 # SkillTech - Organization
 
 ## Azure Landing Governance
-
+*Before we start a project we have to walkaround these bulletpoints and assess the project needs.*
 ---
 
 ## 1. Naming Convention
@@ -82,7 +82,7 @@ All resource names begin with the **sktc** prefix.
   * name: "client" - value: "prtx", "PRATIX", ...
   * name: "environment" - value: "tst", "prd", "TEST", "PROD"
   * name: "project" - value: "bbx", "axerp", "BBX", "AXERP", ...
-  * name: "costsCenter" - value: {subscriptionId}
+  * name: "costsCenter" - value: {{subscriptionId}}
   * name: "application" - value: "pvrpcloud", "PVRPCloudAPI", ...
   * name: "region" - value: "westeurope", "norteurope", ...
   * name: "deployedBy" - value: "Bicep", "ARM", "Manual", "PowerShell"
@@ -120,9 +120,24 @@ Example: [AXERP Function App Actions](https://github.com/SkillTech-Organization/
 
 ---
 
-## 6. Pre-Project Requirements Form
+## 6. Azure Policy regulatory
+*Before the project started we have to declare the accepted Azure Policy rules to deployed environment*
+* Define the scope of the Azure policies
+	* e.g. Resource group level, or subscription level... etc. 
+* Define the rule to resource type
+	* e.g. all resource need a tag property if it is missing, Azure policy fill it automatically in this case
 
-### Define Per Environment
+---
+
+### 7. Resource locking
+*Before the project started we have to declare the resource locking needs*
+* Define that the resource read-only (not deletable or modificable) or delete (modificable)
+
+---
+
+## 8. Pre-Project Requirements Form
+
+### (minimum requirement) Define Per Environment
 
 | Item              | Description                                             |
 | ----------------- | ------------------------------------------------------- |
@@ -138,18 +153,24 @@ Example: [AXERP Function App Actions](https://github.com/SkillTech-Organization/
 | ------------- | ------------- | --------------------- | ------------------------ |
 | Type          | Name          | Purpose & parameters  | _2. Tagging_ description |
 
+### Taggings
+
+### Resource locking
+
+### FinOps 
+
 ---
 
-## 7. Monitoring
+## 9. Monitoring
 
 TBD → Define mandatory logging, alerting, and diagnostic settings.
 [Logging](https://github.com/SkillTech-Organization/KnowledgeBase/tree/develop/Docs)
 ---
 
-## 8. Storage Account Guidelines
+## 10. Storage Account Guidelines
 
 * Redundancy: Default LRS; use ZRS/GRS only if justified
-* Blob Storage: hot tier by default, archive only by exception
+* Blob Storage pricing tiers: hot tier by default, archive only by exception
 * Secure transfer: Always enabled
 * AD Authorization: Use when available
 * TLS Encryption: Mandatory
@@ -157,7 +178,7 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 
 ---
 
-## 9. FinOps
+## 11. FinOps
 
 * Use Azure Cost Management + Billing
 * **IMPORTANT!** Tag all resources for ownership, environment, project - _2. Tagging_ description
@@ -165,7 +186,7 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 
 ---
 
-## 10. Security and Compliance
+## 12. Security and Compliance
 
 * Apply Azure Policy for governance controls
 * Implement role-based access control (RBAC)
@@ -174,7 +195,7 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 
 ---
 
-## 11. Networking
+## 13. Networking
 
 ### VNETs
 
@@ -190,7 +211,7 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 
 ---
 
-## 12. Virtual Machines
+## 14. Virtual Machines
 
 * Publisher: MicrosoftWindowsServer
 * Offer: WindowsServer
@@ -202,7 +223,7 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 
 ---
 
-## 13. Data Storage Guidelines
+## 15. Data Storage Guidelines
 
 ### SQL
 
@@ -217,7 +238,7 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 
 ---
 
-## 14. Certificates and Domains
+## 16. Certificates and Domains
 
 * Certificates must be managed centrally
 * Define expiration monitoring and renewal process
@@ -225,7 +246,7 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 
 ---
 
-## 15. Identity and Access Management
+## 17. Identity and Access Management
 
 * Integrate with Azure Active Directory when justified
 * Define central authentication policy
@@ -233,14 +254,14 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 
 ---
 
-## 16. Automation
+## 18. Automation
 
 * Use Azure Automation and Logic Apps for operational tasks
 * Automate patching, monitoring, backup, and cleanup
 
 ---
 
-## 17. Exit Strategy
+## 19. Exit Strategy
 
 * Define decommissioning steps
 * Create offboarding checklist
@@ -249,7 +270,7 @@ TBD → Define mandatory logging, alerting, and diagnostic settings.
 
 ---
 
-## 18. Configuration
+## 20. Configuration
 
 * All project define own configuration settings in appropiate place
 * For that aim: configuration values adjustable on the Azure portal environment variables section.
@@ -289,3 +310,9 @@ To make these adjustable in Azure Portal:
 * For hierarchical settings, use colon notation
 
 *For example, if you have "Logging": { "LogLevel": { "Default": "Information" } } in appsettings.json, you can override it with an App Setting named "Logging:LogLevel:Default"*
+
+---
+
+## 21. Logging
+
+---
