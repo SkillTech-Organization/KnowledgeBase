@@ -153,7 +153,6 @@ Example: [AXERP Function App Actions](https://github.com/SkillTech-Organization/
 | ------------- | ------------- | --------------------- | ------------------------ |
 | Type          | Name          | Purpose & parameters  | _2. Tagging_ description |
 
-### Taggings
 
 ### Resource locking
 
