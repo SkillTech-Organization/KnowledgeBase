@@ -29,6 +29,7 @@ All resource names begin with the **sktc** prefix.
 
 * BBX: bbx
 * AXERP: axrp
+* AXECARD: axcrd
 * PRVPCLOUD: pvcld
 * REPORTCENTER: rpctr
 
@@ -47,6 +48,7 @@ All resource names begin with the **sktc** prefix.
 * Resource Group: rsgrp
 * App Service: apse
 * App Service Plan: apsp
+* Application Insights: appins
 * Storage: strg
 * Storage Account: stac
 * Blob Storage: blstrg
